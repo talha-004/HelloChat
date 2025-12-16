@@ -9,6 +9,7 @@ export const getUsersController = asyncHandler(
     const users = await getUsersService(userId);
     return res.status(HTTPSTATUS.OK).json({
       message: "Users retrived successfully",
+      users,
     });
   }
 );
