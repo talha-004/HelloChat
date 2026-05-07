@@ -9,3 +9,6 @@ export const HTTPSTATUS = {
 } as const;
 // ⭐
 export type HttpStatusCodeType = (typeof HTTPSTATUS)[keyof typeof HTTPSTATUS];
+
+// type HttpStatusCodeType = 200 | 201 | 400 |401 ...
+//
