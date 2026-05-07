@@ -7,7 +7,7 @@ export interface MessageDocument extends Document {
   image?: string;
   replyTo?: mongoose.Types.ObjectId;
   createdAt: Date;
-  updateAt: Date;
+  updatedAt: Date;
 }
 
 const messageSchema = new Schema<MessageDocument>(
@@ -30,7 +30,7 @@ const messageSchema = new Schema<MessageDocument>(
       default: null,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const MessageModel = mongoose.model<MessageDocument>("Message", messageSchema);

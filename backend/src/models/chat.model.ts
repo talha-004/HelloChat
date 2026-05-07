@@ -7,7 +7,7 @@ export interface ChatDocument extends Document {
   groupName: string;
   createdBy: mongoose.Types.ObjectId;
   createdAt: Date;
-  updateAt: Date;
+  updatedAt: Date;
 }
 const chatSchema = new Schema<ChatDocument>(
   {
@@ -36,7 +36,7 @@ const chatSchema = new Schema<ChatDocument>(
       required: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const ChatModel = mongoose.model<ChatDocument>("Chat", chatSchema);

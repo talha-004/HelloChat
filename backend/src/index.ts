@@ -33,9 +33,9 @@ app.get(
   asyncHandler(async (req: Request, res: Response) => {
     res.status(HTTPSTATUS.OK).json({
       message: "Server is Healthy!",
-      staus: "ok",
+      status: "ok",
     });
-  })
+  }),
 );
 
 app.use(errorHandler);
