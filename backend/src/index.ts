@@ -14,7 +14,7 @@ import "./config/passport.config";
 import routes from "./routes";
 
 const app = express();
-const server = http.createServer();
+const server = http.createServer(app);
 
 // socket
 initializeSocket(server);
@@ -31,6 +31,8 @@ app.use("/api", routes);
 app.get(
   "/health",
   asyncHandler(async (req: Request, res: Response) => {
+    console.log("called");
+
     res.status(HTTPSTATUS.OK).json({
       message: "Server is Healthy!",
       status: "ok",
