@@ -70,7 +70,7 @@ export const initializeSocket = (httpServer: HTTPServer) => {
         } catch (error) {
           callback?.("Error Joining chat");
         }
-      }
+      },
     );
 
     socket.on("chat:leave", (chatId: string) => {
@@ -98,7 +98,7 @@ function getIO() {
 
 export const emitNewChatToParticpants = (
   participantIds: string[] = [],
-  chat: any
+  chat: any,
 ) => {
   const io = getIO();
   for (const participantId of participantIds) {
@@ -109,7 +109,7 @@ export const emitNewChatToParticpants = (
 export const emitNewMessageToChatRoom = (
   senderId: string, //userId that sent the message
   chatId: string,
-  message: any
+  message: any,
 ) => {
   const io = getIO();
   const senderSocketId = onlineUsers.get(senderId);
@@ -124,7 +124,7 @@ export const emitNewMessageToChatRoom = (
 export const emitLastMessageToParticipants = (
   participantIds: string[],
   chatId: string,
-  lastMessage: any
+  lastMessage: any,
 ) => {
   const io = getIO();
   const payload = { chatId, lastMessage };

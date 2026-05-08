@@ -4,7 +4,7 @@ type AsyncController = (
   res: Response,
   next: NextFunction,
 ) => Promise<any>;
-//⭐
+
 export const asyncHandler =
   (controller: AsyncController) =>
   async (req: Request, res: Response, next: NextFunction) => {
